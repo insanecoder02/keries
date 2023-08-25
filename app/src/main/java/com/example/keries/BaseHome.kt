@@ -25,7 +25,7 @@ class BaseHome : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_shop -> {
-                loadFragment(Shop())
+                loadFragment(Team())
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_more -> {

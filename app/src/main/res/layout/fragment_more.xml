@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".More">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/black">
+<!--    <androidx.core.widget.NestedScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="@color/black">-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
 
 
         <LinearLayout
-            android:id="@+id/linearLayout2"
+            android:id="@+id/FAQ"
             android:layout_width="300dp"
             android:layout_height="48dp"
             android:layout_marginTop="8dp"
@@ -36,7 +36,7 @@
                 android:src="@drawable/faqsvg" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textVifew4"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -114,7 +114,7 @@
             android:background="@drawable/background2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+            app:layout_constraintTop_toBottomOf="@+id/FAQ">
 
             <ImageView
                 android:layout_width="48dp"
@@ -213,7 +213,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.core.widget.NestedScrollView>
+<!--    </androidx.core.widget.NestedScrollView>-->
 
 
 </FrameLayout>

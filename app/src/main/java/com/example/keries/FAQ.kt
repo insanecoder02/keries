@@ -66,30 +66,13 @@
 //        d5.setOnClickListener {
 //            downFunction(a5,d5,b5)
 //        }
-//        d6.setOnClickListener {
-//            downFunction(a6,d6,b6)
-//        }
-//
-//    }
-//    private fun downFunction(a: TextView,d:ImageView,b:Boolean){
-//
-//        if (b) {
-//            a.visibility = View.GONE
-//            d.animate().rotation(0F)
-//            b = false
-//        } else {
-//            a.visibility = View.VISIBLE
-//            d.animate().rotation(180F)
-//            b = true
-//        }
-//    }
-//
-//
-//
-//}
+
+
 
 package com.example.keries
 
+import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -102,7 +85,9 @@ import android.view.animation.TranslateAnimation
 
 class FAQ : Fragment() {
 
+//    private val buttonStates = mutableMapOf<ImageView, Boolean>()
     private val buttonStates = mutableMapOf<ImageView, Boolean>()
+    private val dropHeight = 500
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -173,8 +158,62 @@ class FAQ : Fragment() {
             a.visibility = View.VISIBLE
             d.animate().rotation(180F)
         }
-
-        // Update the state in the map
         buttonStates[d] = !currentState
     }
+
+
+
+
+
+//    private fun toggleDropDownAnimation(a: TextView, d: ImageView) {
+//        val currentState = buttonStates[d] ?: false
+//
+//        val translateYAnimator = if (currentState) {
+//            ValueAnimator.ofInt(dropHeight, 0)
+//        } else {
+//            ValueAnimator.ofInt(0, dropHeight)
+//        }
+//
+//        translateYAnimator.addUpdateListener { valueAnimator ->
+//            val value = valueAnimator.animatedValue as Int
+//            a.translationY = value.toFloat()
+//        }
+//
+//        translateYAnimator.duration = 500
+//        val rotateAnimator = ObjectAnimator.ofFloat(d, "rotation", if (currentState) 0f else 180f)
+//
+//        translateYAnimator.start()
+//        rotateAnimator.start()
+//
+//        // Update the state in the map
+//        buttonStates[d] = !currentState
+//    }
+
+
+//    private fun toggleDropDownAnimation(a: TextView, d: ImageView) {
+//        val currentState = buttonStates[d] ?: false
+//
+//        if (currentState) {
+//            // Collapse animation
+//            a.animate().translationY(0f).setDuration(300).start()
+//            d.animate().rotation(0f).setDuration(300).start()
+//        } else {
+//            // Expand animation
+//            a.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
+//            val targetHeight = a.measuredHeight
+//
+//            a.translationY = -targetHeight.toFloat()
+//            a.animate().translationY(0f).setDuration(300).start()
+//            d.animate().rotation(180f).setDuration(300).start()
+//        }
+//
+//        // Update the state in the map
+//        buttonStates[d] = !currentState
+//    }
+
+
+
+
+
+
 }

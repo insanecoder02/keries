@@ -1,5 +1,6 @@
 package com.example.keries
 
+import Team
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -23,6 +24,10 @@ class More : Fragment() {
         val FAQ = view.findViewById<LinearLayout>(R.id.FAQ)
         FAQ.setOnClickListener {
             loadFragment(FAQ())
+        }
+        val TEAM = view.findViewById<LinearLayout>(R.id.teamlayout)
+        TEAM.setOnClickListener {
+            loadFragment(Team())
         }
     }
 

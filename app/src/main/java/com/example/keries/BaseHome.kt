@@ -1,6 +1,7 @@
 package com.example.keries
 
 
+import Team
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -25,7 +26,7 @@ class BaseHome : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_shop -> {
-                loadFragment(Team())
+                loadFragment(Shop())
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_more -> {

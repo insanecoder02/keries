@@ -40,6 +40,7 @@ android {
 dependencies {
 
     implementation("androidx.core:core-ktx:1.9.0")
+    implementation ("com.squareup.okhttp3:okhttp:4.9.1")
     implementation ("com.google.firebase:firebase-firestore:24.7.0")
     implementation ("androidx.recyclerview:recyclerview:1.3.1")
     implementation ("com.github.bumptech.glide:glide:4.12.0")

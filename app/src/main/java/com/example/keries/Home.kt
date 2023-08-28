@@ -8,15 +8,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
 
 class Home : Fragment() {
 
+
+    private lateinit var FeaturedEventRecylerView: RecyclerView
+    private lateinit var featuredEventsAdapter : featuredEventsAdapter
+    private  var FeaturedEventsList  : MutableList<FeaturedEventes> = mutableListOf()
     private lateinit var countDownTimer: CountDownTimer
     private lateinit var countdownTextView: TextView
 
+
+
+
+
+
+
+    // this code should be touched
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,11 +38,46 @@ class Home : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
+
+
+
+
+
+
+
+
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        FeaturedEventRecylerView = view.findViewById(R.id.FeaturedEventRecylerView)
+        featuredEventsAdapter = featuredEventsAdapter(FeaturedEventsList)
+        FeaturedEventRecylerView.layoutManager = LinearLayoutManager(requireContext())
+        FeaturedEventRecylerView.adapter = featuredEventsAdapter
         countdownTextView = view.findViewById(R.id.countdownTextView)
         fetchSystemDateTime()
+        fetchFirestoreData()
+
+    }
+
+    private fun fetchFirestoreData() {
+        val db = FirebaseFirestore.getInstance()
+        db.collection("items")
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val title = document.getString("title") ?: ""
+                    val imageUrl = document.getString("imageUrl") ?: ""
+                    val item = FeaturedEventes(title, imageUrl)
+                    FeaturedEventsList.add(item)
+                }
+                featuredEventsAdapter.notifyDataSetChanged()
+            }
+            .addOnFailureListener { exception ->
+
+            }
     }
 
     private fun fetchSystemDateTime() {
@@ -40,6 +89,9 @@ class Home : Fragment() {
 
         startCountdown(timeDifferenceMillis)
     }
+
+
+
 
     private fun startCountdown(timeInMillis: Long) {
         countDownTimer = object : CountDownTimer(timeInMillis, 1000) {

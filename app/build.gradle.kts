@@ -39,7 +39,9 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
+    implementation ("com.google.firebase:firebase-firestore:24.7.0")
+    implementation ("com.firebaseui:firebase-ui-firestore:8.0.0")
+    implementation("androidx.core:core-ktx:1.10.1")
     implementation ("com.squareup.okhttp3:okhttp:4.9.1")
     implementation ("com.google.firebase:firebase-firestore:24.7.0")
     implementation ("androidx.recyclerview:recyclerview:1.3.1")

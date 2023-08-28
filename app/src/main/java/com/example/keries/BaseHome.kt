@@ -26,7 +26,7 @@ class BaseHome : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_shop -> {
-                loadFragment(Shop())
+                loadFragment(sponser())
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_more -> {
@@ -43,9 +43,9 @@ class BaseHome : AppCompatActivity() {
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
         bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
-
-        // Load the initial fragment (for example, HomeFragment)
         loadFragment(Home())
+
+
     }
 
     private fun loadFragment(fragment: Fragment) {

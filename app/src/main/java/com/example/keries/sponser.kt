@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.GridLayout
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
@@ -32,8 +35,13 @@ class sponser : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         sponsorRecyclerView = view.findViewById(R.id.sponserRecylerView)
+
+        val backbutton = view.findViewById<ImageView>(R.id.backsponser)
+        backbutton.setOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
         sponseradapter = SponsorAdapter(SponserList)
-        sponsorRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        sponsorRecyclerView.layoutManager = GridLayoutManager(requireContext(),2)
         sponsorRecyclerView.adapter = sponseradapter
         fetchFirestoreData()
 

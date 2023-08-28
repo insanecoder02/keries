@@ -29,6 +29,11 @@ class More : Fragment() {
         TEAM.setOnClickListener {
             loadFragment(Team())
         }
+        val SPONSER = view.findViewById<LinearLayout>(R.id.SPONS)
+        SPONSER.setOnClickListener {
+            loadFragment(sponser())
+        }
+
     }
 
 

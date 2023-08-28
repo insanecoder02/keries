@@ -85,7 +85,7 @@
             android:background="@drawable/background2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+            app:layout_constraintTop_toBottomOf="@+id/SPONS">
 
             <ImageView
                 android:layout_width="48dp"
@@ -136,7 +136,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout6"
+            android:id="@+id/SPONS"
             android:layout_width="300dp"
             android:layout_height="48dp"
             android:layout_marginTop="8dp"

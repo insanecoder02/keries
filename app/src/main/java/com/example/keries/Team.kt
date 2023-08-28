@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -32,6 +33,11 @@ class Team : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        val backbutton = view.findViewById<ImageView>(R.id.backteam)
+        backbutton.setOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
 
         reyclerview = view.findViewById<RecyclerView>(R.id.boxo)
         reyclerview.layoutManager  = LinearLayoutManager(context)

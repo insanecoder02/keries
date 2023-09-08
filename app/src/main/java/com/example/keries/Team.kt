@@ -57,7 +57,7 @@ class Team : Fragment() {
                     val name = document.getString("name")?:""
                     val wing = document.getString("wing")?:""
                     val url = document.getString("url")?:""
-                    teamMemberList.add(TeamMember(name,wing))
+                    teamMemberList.add(TeamMember(name,wing,url))
                 }
                 teamAdapter = TeamAdapter(teamMemberList) // You need to define this constructor in your TeamAdapter class
                 reyclerview.adapter = teamAdapter

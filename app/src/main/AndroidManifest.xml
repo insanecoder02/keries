@@ -27,7 +27,7 @@
         </activity>
         <meta-data
             android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+            android:resource="@array/com_google_android_gms_fonts_certs_prod" />
     </application>
 
 </manifest>

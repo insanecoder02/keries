@@ -39,7 +39,7 @@ android {
 
 dependencies {
 
-    implementation ("com.google.firebase:firebase-firestore:24.7.0")
+    implementation ("com.google.firebase:firebase-firestore:24.7.1")
     implementation ("com.firebaseui:firebase-ui-firestore:8.0.0")
     implementation("androidx.core:core-ktx:1.10.1")
     implementation ("com.squareup.okhttp3:okhttp:4.9.1")
@@ -56,9 +56,6 @@ dependencies {
     implementation("com.google.firebase:firebase-database-ktx:20.2.2")
     implementation("com.google.firebase:firebase-firestore-ktx:24.7.0")
     implementation("com.google.firebase:firebase-crashlytics-ktx:18.4.0")
-    implementation("com.google.firebase:firebase-analytics-ktx:21.3.0")
-    implementation("com.google.firebase:firebase-messaging-ktx:23.2.1")
-    implementation("com.google.firebase:firebase-config-ktx:21.4.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
